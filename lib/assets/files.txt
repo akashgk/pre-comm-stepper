@@ -16,3 +16,6 @@ if [[ -n $(git diff --name-only) ]]; then
 fi
 
 exit 0
+
+
+# chmod +x .git/hooks/pre-commit    

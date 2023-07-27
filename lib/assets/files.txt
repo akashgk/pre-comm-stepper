@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# Stash any staged changes to avoid conflicts
+git stash -q --keep-index
+
+# Run dart format on the lib folder
+dart format lib/
+
+# Restore stashed changes
+git stash pop -q
+
+# Check if there are any formatting changes
+if [[ -n $(git diff --name-only) ]]; then
+  echo "Code formatting issues found. Please run 'dart format' on your code."
+  exit 1
+fi
+
+exit 0

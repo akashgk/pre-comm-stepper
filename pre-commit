@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Run dart format on all Dart files
+dart format .
